@@ -12,25 +12,26 @@ O jogo deve ser funcional e incentivar a melhoria do paciente/jogador, utilizand
 
 ### 1. Tecnologia e Framework
 
-* **Framework:** Implementação completa utilizando **libGDX** (Java).
-* **Controle com IoT (Bicicleta Estática):**
-    * O controle do jogo é **exclusivamente** via coleta de dados de pedaladas de um dispositivo IoT (Simulação de leitura Serial/Bluetooth de RPM).
-    * A movimentação e as ações do personagem/jogo são **diretamente influenciadas** pela velocidade (RPM) e consistência das pedaladas.
-* **Mecânica Abstrata:** O tema do jogo é sobre navegação espacial, mas a mecânica de controle é a coleta do movimento de pedalar (RPM).
+**Framework:** Implementação completa utilizando **libGDX** (Java).
+
+**Controle com IoT (Bicicleta Estática):**
+     O controle do jogo é **exclusivamente** via coleta de dados de pedaladas de um dispositivo IoT (Simulação de leitura Serial/Bluetooth de RPM).
+     A movimentação e as ações do personagem/jogo são **diretamente influenciadas** pela velocidade (RPM) e consistência das pedaladas.
+ **Mecânica Abstrata:** O tema do jogo é sobre navegação espacial, mas a mecânica de controle é a coleta do movimento de pedalar (RPM).
 
 ### 2. Estrutura do Jogo
 
-* **Fases/Níveis:** O jogo deve conter **no mínimo 3 níveis ou fases distintos**, com dificuldade progressiva (Fase 1: Órbita, Fase 2: Asteroides, Fase 3: Minhoca).
-* **Personagem:** Inclui uma Nave Espacial (personagem principal).
-* **Menu:** Possui um menu principal que permite **Iniciar**, **Pausar** e **Reiniciar** o jogo.
-* **Funcionalidade:** O jogo deve ser operacional, demonstrando todas as mecânicas de controle IoT implementadas.
+**Fases/Níveis:** O jogo deve conter **no mínimo 3 níveis ou fases distintos**, com dificuldade progressiva (Fase 1: Órbita, Fase 2: Asteroides, Fase 3: Minhoca).
+**Personagem:** Inclui uma Nave Espacial (personagem principal).
+**Menu:** Possui um menu principal que permite **Iniciar**, **Pausar** e **Reiniciar** o jogo.
+**Funcionalidade:** O jogo deve ser operacional, demonstrando todas as mecânicas de controle IoT implementadas.
 
 ### 3. Precisão e Avaliação (Métricas)
 
-* **Pontuação e Controle:** A **velocidade (RPM)** e a **consistência (Desvio Padrão da RPM)** são monitoradas e utilizadas como:
-    * Métrica de controle do personagem (Altitude da Nave).
-    * Métrica para carregar/ativar habilidades (Escudo de Consistência).
-    * Indicador de progresso na reabilitação ao longo das fases.
+**Pontuação e Controle:** A **velocidade (RPM)** e a **consistência (Desvio Padrão da RPM)** são monitoradas e utilizadas como:
+    Métrica de controle do personagem (Altitude da Nave).
+    Métrica para carregar/ativar habilidades (Escudo de Consistência).
+    Indicador de progresso na reabilitação ao longo das fases.
 
 ---
 
@@ -48,8 +49,8 @@ A comunicação entre a bicicleta ergométrica (via sensor de RPM) e o jogo (lib
 
 Para garantir um controle suave, os dados brutos de RPM são filtrados:
 
-* **Amostragem:** Leitura a cada 50ms.
-* **Filtro de Média Móvel (Smoothing):** Média das últimas 5 leituras para suavizar picos (ruído), garantindo uma resposta de nave fluida.
+**Amostragem:** Leitura a cada 50ms.
+**Filtro de Média Móvel (Smoothing):** Média das últimas 5 leituras para suavizar picos (ruído), garantindo uma resposta de nave fluida.
 
 ### 2. Implementação das Métricas de Avaliação
 
@@ -64,8 +65,8 @@ Governa o **Controle Vertical (Altitude)** da nave.
 
 **Mecânica de Controle (Movimento da Nave):**
 
-* A nave sobe se o `currentRPM` for maior que o `targetRPM` e desce se for menor.
-* A nave flutua estavelmente apenas quando o paciente pedala exatamente no RPM alvo (ponto ideal de reabilitação).
+A nave sobe se o `currentRPM` for maior que o `targetRPM` e desce se for menor.
+A nave flutua estavelmente apenas quando o paciente pedala exatamente no RPM alvo (ponto ideal de reabilitação).
 
 #### 2.2. Métrica 2: Consistência (Variação de RPM)
 
@@ -73,13 +74,13 @@ Mede a uniformidade do exercício. É usada para carregar o **Escudo de Energia*
 
 **Cálculo da Consistência:**
 
-* Avaliada pelo **Desvio Padrão (DP)** das últimas leituras de RPM (N=10, cobrindo 0.5s).
-* Um DP baixo indica pedalada suave e consistente.
+Avaliada pelo **Desvio Padrão (DP)** das últimas leituras de RPM (N=10, cobrindo 0.5s).
+Um DP baixo indica pedalada suave e consistente.
 
 **Mecânica de Jogo (Escudo):**
 
-* **Escudo Ativo:** Se o Desvio Padrão da RPM (`DP_RPM`) for menor que um limite (`Threshold`).
-* **Função:** O escudo permite que a nave absorva um impacto de asteroide por fase.
+**Escudo Ativo:** Se o Desvio Padrão da RPM (`DP_RPM`) for menor que um limite (`Threshold`).
+**Função:** O escudo permite que a nave absorva um impacto de asteroide por fase.
 
 ### 3. Implementação dos Níveis (Dificuldade Progressiva)
 
