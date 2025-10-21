@@ -8,9 +8,9 @@ O jogo deve ser funcional e incentivar a melhoria do paciente/jogador, utilizand
 
 ---
 
-## I. Requisitos Técnicos e Funcionais
+##  Requisitos Técnicos e Funcionais
 
-### 1. Tecnologia e Framework
+### Tecnologia e Framework
 
 **Framework:** Implementação completa utilizando **libGDX** (Java).
 
@@ -19,14 +19,14 @@ O jogo deve ser funcional e incentivar a melhoria do paciente/jogador, utilizand
      A movimentação e as ações do personagem/jogo são **diretamente influenciadas** pela velocidade (RPM) e consistência das pedaladas.
  **Mecânica Abstrata:** O tema do jogo é sobre navegação espacial, mas a mecânica de controle é a coleta do movimento de pedalar (RPM).
 
-### 2. Estrutura do Jogo
+### Estrutura do Jogo
 
 **Fases/Níveis:** O jogo deve conter **no mínimo 3 níveis ou fases distintos**, com dificuldade progressiva (Fase 1: Órbita, Fase 2: Asteroides, Fase 3: Minhoca).
 **Personagem:** Inclui uma Nave Espacial (personagem principal).
 **Menu:** Possui um menu principal que permite **Iniciar**, **Pausar** e **Reiniciar** o jogo.
 **Funcionalidade:** O jogo deve ser operacional, demonstrando todas as mecânicas de controle IoT implementadas.
 
-### 3. Precisão e Avaliação (Métricas)
+### Precisão e Avaliação (Métricas)
 
 **Pontuação e Controle:** A **velocidade (RPM)** e a **consistência (Desvio Padrão da RPM)** são monitoradas e utilizadas como:
     Métrica de controle do personagem (Altitude da Nave).
@@ -35,9 +35,9 @@ O jogo deve ser funcional e incentivar a melhoria do paciente/jogador, utilizand
 
 ---
 
-## II. Detalhes Técnicos de Implementação
+##  Detalhes Técnicos de Implementação
 
-### 1. Arquitetura de Integração IoT (Simulação/Real)
+### Arquitetura de Integração IoT (Simulação/Real)
 
 A comunicação entre a bicicleta ergométrica (via sensor de RPM) e o jogo (libGDX) segue o fluxo:
 
@@ -45,16 +45,16 @@ A comunicação entre a bicicleta ergométrica (via sensor de RPM) e o jogo (lib
 2.  **Módulo de Comunicação (Hardware):** Microcontrolador (e.g., ESP32) calcula o RPM e envia para o PC via **Interface Serial (USB) ou Bluetooth (BLE)**.
 3.  **Interface de Leitura (Java/libGDX):** Classe conceitual `IoTSimulator` no libGDX lê continuamente os dados da porta.
 
-#### 1.1. Tratamento de Dados (Filtering)
+#### Tratamento de Dados (Filtering)
 
 Para garantir um controle suave, os dados brutos de RPM são filtrados:
 
 **Amostragem:** Leitura a cada 50ms.
 **Filtro de Média Móvel (Smoothing):** Média das últimas 5 leituras para suavizar picos (ruído), garantindo uma resposta de nave fluida.
 
-### 2. Implementação das Métricas de Avaliação
+### Implementação das Métricas de Avaliação
 
-#### 2.1. Métrica 1: Velocidade de Pedalada (RPM)
+#### Métrica 1: Velocidade de Pedalada (RPM)
 
 Governa o **Controle Vertical (Altitude)** da nave.
 
@@ -68,7 +68,7 @@ Governa o **Controle Vertical (Altitude)** da nave.
 A nave sobe se o `currentRPM` for maior que o `targetRPM` e desce se for menor.
 A nave flutua estavelmente apenas quando o paciente pedala exatamente no RPM alvo (ponto ideal de reabilitação).
 
-#### 2.2. Métrica 2: Consistência (Variação de RPM)
+#### Métrica 2: Consistência (Variação de RPM)
 
 Mede a uniformidade do exercício. É usada para carregar o **Escudo de Energia**.
 
@@ -82,7 +82,7 @@ Um DP baixo indica pedalada suave e consistente.
 **Escudo Ativo:** Se o Desvio Padrão da RPM (`DP_RPM`) for menor que um limite (`Threshold`).
 **Função:** O escudo permite que a nave absorva um impacto de asteroide por fase.
 
-### 3. Implementação dos Níveis (Dificuldade Progressiva)
+### Implementação dos Níveis (Dificuldade Progressiva)
 
 O nível de dificuldade é ajustado via variáveis do jogo, forçando o jogador a adaptar sua pedalada para o objetivo terapêutico.
 
@@ -92,7 +92,7 @@ O nível de dificuldade é ajustado via variáveis do jogo, forçando o jogador 
 | **Fase 2 (Asteroides)** | Pista estreita. Maior densidade de obstáculos. | `targetRPM` = 65. Threshold de Consistência reduzido (exige DP menor). |
 | **Fase 3 (Minhoca)** | Pista oscilante. Tempo de fase alongado. | `targetRPM` = 80. Foco na resistência de alta RPM. |
 
-### 4. Avaliação e Relatório
+### Avaliação e Relatório
 
 Ao final de cada nível, o jogo coleta os seguintes dados para feedback:
 
@@ -102,7 +102,7 @@ Ao final de cada nível, o jogo coleta os seguintes dados para feedback:
 
 ---
 
-## III. Entregáveis
+## Entregáveis
 
 1.  **Implementação do Jogo (libGDX + IoT)**
     * Código-fonte completo do projeto (obrigatório o uso do **GitHub com commits semanais**).
@@ -115,7 +115,7 @@ Ao final de cada nível, o jogo coleta os seguintes dados para feedback:
 
 ---
 
-## IV. Critérios de Avaliação
+## Critérios de Avaliação
 
 O projeto será avaliado com base nos seguintes critérios:
 
