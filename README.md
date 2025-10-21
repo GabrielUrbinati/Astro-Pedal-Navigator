@@ -17,6 +17,7 @@ O jogo deve ser funcional e incentivar a melhoria do paciente/jogador, utilizand
 **Controle com IoT (Bicicleta Estática):**
      O controle do jogo é **exclusivamente** via coleta de dados de pedaladas de um dispositivo IoT (Simulação de leitura Serial/Bluetooth de RPM).
      A movimentação e as ações do personagem/jogo são **diretamente influenciadas** pela velocidade (RPM) e consistência das pedaladas.
+     
  **Mecânica Abstrata:** O tema do jogo é sobre navegação espacial, mas a mecânica de controle é a coleta do movimento de pedalar (RPM).
 
 ### Estrutura do Jogo
