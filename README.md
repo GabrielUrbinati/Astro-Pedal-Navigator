@@ -1,4 +1,4 @@
-# Projeto Final: Desenvolvimento de Jogo Sério para Reabilitação com IoT e libGDX
+# Projeto Final: Desenvolvimento de Jogo Digital para Reabilitação com IoT e libGDX
 
 ## 🚀 Astro-Pedal Navigator: Reabilitação Gamificada
 
