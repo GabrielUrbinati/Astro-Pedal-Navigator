@@ -1,9 +1,10 @@
-package br.mackenzie.astropedal.screens;
+package br.mackenzie.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import br.mackenzie.astropedal.AstroPedalNavigator;
+
+import br.mackenzie.AstroPedalNavigator;
 
 public class MenuScreen implements Screen {
 

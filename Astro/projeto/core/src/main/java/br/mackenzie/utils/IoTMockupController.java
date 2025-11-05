@@ -1,7 +1,8 @@
-package br.mackenzie.astropedal.utils;
+package br.mackenzie.utils;
+
+import java.util.Random;
 
 import com.badlogic.gdx.Gdx;
-import java.util.Random;
 
 public class IoTMockupController {
 

@@ -15,7 +15,7 @@ public class Lwjgl3Launcher {
 //  PRA RODAR >  ./gradlew Lwjgl3:run
 
     private static Lwjgl3Application createApplication() {
-        return new Lwjgl3Application(new Main(), getDefaultConfiguration());
+        return new Lwjgl3Application(new AstroPedalNavigator(), getDefaultConfiguration());
     }
 
     private static Lwjgl3ApplicationConfiguration getDefaultConfiguration() {
