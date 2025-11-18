@@ -1,5 +1,102 @@
 # Projeto Final: Desenvolvimento de Jogo Digital para Reabilitação com IoT e libGDX
 
+# Astro Pedal Navigator
+
+**Astro Pedal Navigator** é um jogo 2D estilo arcade em que o jogador controla uma nave movida a pedais, desviando de asteroides enquanto mantém um ritmo consistente.
+
+---
+
+## Descrição
+
+O objetivo do jogo é manter a nave no eixo Y central enquanto obstáculos aparecem aleatoriamente no topo, meio ou fundo da tela. O jogador deve acompanhar o ritmo do pedalar (RPM) para controlar a altitude da nave. Pontos são acumulados por cada obstáculo desviado.
+
+---
+
+## Como Jogar
+
+- **Subir:** Pressione a seta **↑** ou toque na tela (dependendo da plataforma)
+- **Manter ritmo:** Ajuste o pedal para aproximar o RPM do alvo
+- **Objetivo:** Chegar a 100 pontos para passar de fase
+
+---
+
+## Fases
+
+1. **Level 1:** RPM alvo 70, obstáculos básicos
+2. **Level 2:** RPM alvo 80, IA moderada (agressividade média), spawn interval menor
+3. **Level 3:** RPM alvo 90, IA agressiva
+4. **Custom Levels:** Configurações definidas pelo usuário, incluíndo velocidade de obstáculos, fundo e intensidade da IA
+
+---
+
+# Destaques do Astro Pedal Navigator
+
+- 🚀 **Controle por RPM:** A nave é controlada pelo ritmo de pedal do jogador, criando uma experiência única de arcade + fitness.  
+- 🪐 **Obstáculos Aleatórios:** Asteroides aparecem no topo, meio ou fundo da tela, exigindo atenção constante.  
+- 🎯 **Pontuação e Fases:** Pontos são acumulados desviando de obstáculos; atingir 100 pontos avança o jogador para a próxima fase.  
+- ⚡ **IA Dinâmica:** Asteroides inteligentes se comportam de forma agressiva ou moderada dependendo da fase, aumentando a dificuldade progressivamente.  
+- 🎨 **Visual Simples e Eficiente:** Fundos diferentes por fase (`background.png`, `background2.png`, `background3.png`) e sprites claros para nave e asteroides.  
+- ⏱ **Desafio de Tempo:** Cada fase dura 60 segundos, combinando precisão e ritmo para maximizar a pontuação.  
+- 🛠 **Custom Levels:** Permite configurar velocidade de obstáculos, fundo e intensidade da IA para desafios personalizados a partir do level 4
+
+## Assets
+
+Todos os assets gráficos estão localizados em projetos/assets/textures
+## Dependências
+
+- Java 22
+- Gradle
+- LibGDX
+- LWJGL3
+
+---
+# Estrutura do Projeto: Astro Pedal Navigator
+
+Astro-Pedal-Navigator/
+├─ **Astro/**
+│  ├─ **projeto/**
+│  │  ├─ **core/**               # Lógica principal e assets
+│  │  │  ├─ java/
+│  │  │  │  └─ **br/mackenzie/**
+│  │  │  │     ├─ **ai/**         # Lógica de IA para asteroids
+│  │  │  │     │  └─ AIsteroid.java
+│  │  │  │     ├─ **screens/**    # Telas do jogo
+│  │  │  │     │  ├─ BaseLevelScreen.java
+│  │  │  │     │  ├─ Level1Screen.java
+│  │  │  │     │  ├─ Level2Screen.java
+│  │  │  │     │  ├─ Level3Screen.java
+│  │  │  │     │  ├─ CustomLevelScreen.java
+│  │  │  │     │  └─ MenuScreen.java
+│  │  │  │     ├─ **utils/**      # Utilitários e controllers
+│  │  │  │     │  ├─ GameAssets.java
+│  │  │  │     │  └─ IoTMockupController.java
+│  │  │  │     └─ AstroPedalNavigator.java  # Classe principal do jogo
+│  │  │  └─ assets/
+│  │  │     ├─ textures/
+│  │  │     │  ├─ background.png
+│  │  │     │  ├─ background2.png
+│  │  │     │  ├─ background3.png
+│  │  │     │  ├─ nave.png
+│  │  │     │  ├─ asteroid.jpg
+│  │  │     │  └─ asteroid2.png
+│  │  │     └─ sounds/            # Se houver sons (opcional)
+│  │  ├─ **lwjgl3/**              # Plataforma desktop
+│  │  │  ├─ java/
+│  │  │  │  └─ br/mackenzie/lwjgl3/
+│  │  │  │     └─ Lwjgl3Launcher.java  # Launcher para desktop
+│  │  │  └─ resources/            # Recursos específicos de desktop (opcional)
+│  │  └─ build.gradle
+├─ settings.gradle
+└─ README.md
+## Executando o Jogo
+
+1. Configure o Java:
+
+```bash
+
+..\gradlew.bat run
+```
+
 ## 🚀 Astro-Pedal Navigator: Reabilitação Gamificada
 
 **Objetivo:** Desenvolver um **Jogo Sério** focado no processo de reabilitação física. O jogo utiliza o framework **libGDX** e integra-se com um dispositivo **IoT (Internet das Coisas)** para coletar dados de pedaladas em uma bicicleta ergométrica, transformando o exercício em uma experiência gamificada.
