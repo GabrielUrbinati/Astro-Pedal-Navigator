@@ -89,6 +89,24 @@ Todos os assets gráficos estão localizados em projetos/assets/textures
 │  │  └─ build.gradle
 ├─ settings.gradle
 └─ README.md ```
+
+
+# Screenshots do Jogo
+
+### Tela Custom Level
+![Custom Level](custom.jpeg)
+
+### Level 1
+![Level 1](level1.jpeg)
+
+### Level 2
+![Level 2](level2.jpeg)
+
+### Game Over
+![Game Over](gameover.jpeg)
+
+### Estatísticas / Score
+![Stats](stats.jpeg)
 ## Executando o Jogo
 
 1. Configure o Java:
