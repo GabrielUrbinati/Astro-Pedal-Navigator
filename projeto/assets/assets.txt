@@ -1,0 +1,8 @@
+.gitkeep
+textures/asteroid.jpg
+textures/asteroid2.png
+textures/background.png
+textures/background2.png
+textures/background3.png
+textures/menu_background.png
+textures/nave.png
