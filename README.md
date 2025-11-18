@@ -52,7 +52,8 @@ Todos os assets gráficos estão localizados em projetos/assets/textures
 ---
 # Estrutura do Projeto: Astro Pedal Navigator
 
-Astro-Pedal-Navigator/
+```bash
+ Astro-Pedal-Navigator/
 ├─ **Astro/**
 │  ├─ **projeto/**
 │  │  ├─ **core/**               # Lógica principal e assets
@@ -87,7 +88,7 @@ Astro-Pedal-Navigator/
 │  │  │  └─ resources/            # Recursos específicos de desktop (opcional)
 │  │  └─ build.gradle
 ├─ settings.gradle
-└─ README.md
+└─ README.md ```
 ## Executando o Jogo
 
 1. Configure o Java:
