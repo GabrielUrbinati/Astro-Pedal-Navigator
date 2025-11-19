@@ -91,6 +91,15 @@ Todos os assets gráficos estão localizados em projetos/assets/textures
 └─ README.md ```
 
 
+
+## Executando o Jogo
+
+1. Configure o Java:
+
+```bash
+
+..\gradlew.bat run
+```
 # Screenshots do Jogo
 
 ### Tela Custom Level
@@ -107,15 +116,6 @@ Todos os assets gráficos estão localizados em projetos/assets/textures
 
 ### Estatísticas / Score
 ![Stats](stats.jpeg)
-## Executando o Jogo
-
-1. Configure o Java:
-
-```bash
-
-..\gradlew.bat run
-```
-
 ## 🚀 Astro-Pedal Navigator: Reabilitação Gamificada
 
 **Objetivo:** Desenvolver um **Jogo Sério** focado no processo de reabilitação física. O jogo utiliza o framework **libGDX** e integra-se com um dispositivo **IoT (Internet das Coisas)** para coletar dados de pedaladas em uma bicicleta ergométrica, transformando o exercício em uma experiência gamificada.
